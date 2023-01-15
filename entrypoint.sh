@@ -29,8 +29,6 @@ fi
 
 REPOSITORY_PATH="https://x-access-token:${PERSONAL_TOKEN}@github.com/${PRO_REPOSITORY}.git"
 
-git config --add safe.directory *  --global
-
 # deploy to 
 echo "Deploy to ${PRO_REPOSITORY}"
 
@@ -57,6 +55,7 @@ cd $PUBLISH_DIR
 echo "Init Git"
 
 git init
+git config --add safe.directory *  --global
 
 echo "Config git ..."
 
