@@ -29,6 +29,8 @@ fi
 
 REPOSITORY_PATH="https://x-access-token:${PERSONAL_TOKEN}@github.com/${PRO_REPOSITORY}.git"
 
+git config --add safe.directory *  --global
+
 # deploy to 
 echo "Deploy to ${PRO_REPOSITORY}"
 
@@ -49,7 +51,6 @@ echo "Generate file ..."
 ./node_modules/hexo/bin/hexo generate 
 
 cd $PUBLISH_DIR
-git config --global --add safe.directory "/github/workspace/${PUBLISH_DIR}"
 
 # Configures Git.
 
